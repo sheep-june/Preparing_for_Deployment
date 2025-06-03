@@ -135,27 +135,48 @@ dotenv.config();
 const app = express();
 const port = 4000;
 
-const allowedOrigins = [
-  "https://kauuru.vercel.app", // ✅ 실제 프로덕션 주소
-  "https://kauuru-d541p8qsq-yangjuns-projects-672649fb.vercel.app", // ✅ 프리뷰 주소
-  "https://af70-182-229-137-57.ngrok-free.app" // ✅ 최신 ngrok 주소
-];
+// const allowedOrigins = [
+//   "https://kauuru.vercel.app", // ✅ 실제 프로덕션 주소
+//   "https://kauuru-d541p8qsq-yangjuns-projects-672649fb.vercel.app", // ✅ 프리뷰 주소
+//   "https://0b79-182-229-137-57.ngrok-free.app" // ✅ 최신 ngrok 주소
+// ];
 
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       console.log("🔗 요청 Origin:", origin);
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         console.log("❌ CORS 차단:", origin);
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
+
+const allowedOrigins = [
+  "https://kauuru.vercel.app",
+  "https://kauuru-d541p8qsq-yangjuns-projects-672649fb.vercel.app",
+  "https://0b79-182-229-137-57.ngrok-free.app"
+];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      console.log("🔗 요청 Origin:", origin);
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
+      if (!origin) return callback(null, true); // allow Postman etc
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, origin); // 👈 반드시 origin 그대로 넘겨야 함
       } else {
-        console.log("❌ CORS 차단:", origin);
-        callback(new Error("Not allowed by CORS"));
+        return callback(new Error("Not allowed by CORS"));
       }
     },
     credentials: true,
   })
 );
+
 
 app.use(helmet({ crossOriginResourcePolicy: false }));
 app.use(cookieParser());

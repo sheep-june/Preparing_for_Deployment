@@ -12,12 +12,12 @@ const LandingPage = () => {
     const navigate = useNavigate();
     const limit = 4;
     // const [searchTerm, setSearchTerm] = useState("");
-    const [setProducts] = useState([]);
-    // const [products, setProducts] = useState([]);
+    // const [setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
     const [skip] = useState(0);
     // const [skip, setSkip] = useState(0);
-    const [setHasMore] = useState(false);
-    // const [hasMore, setHasMore] = useState(false);
+    // const [setHasMore] = useState(false);
+    const [hasMore, setHasMore] = useState(false);
     // const [filters, setFilters] = useState({
     //     categories: [],
     //     price: [],

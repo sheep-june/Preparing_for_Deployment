@@ -59,7 +59,15 @@ router.get("/", async (req, res) => {
         let filters = {};
 
         if (typeof req.query.filters === "string") {
-            filters = JSON.parse(req.query.filters);
+            // filters = JSON.parse(req.query.filters);
+            try {
+                if (typeof req.query.filters === "string") {
+                    filters = JSON.parse(req.query.filters);
+                }
+            } catch (e) {
+                console.error("❌ filters 파싱 실패:", e.message);
+                filters = {};
+            }
         } else if (typeof req.query.filters === "object") {
             filters = req.query.filters;
         }
@@ -180,6 +188,5 @@ router.put("/:id", auth, async (req, res) => {
         res.status(500).send("상품 수정 실패");
     }
 });
-
 
 module.exports = router;
