@@ -25,16 +25,16 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
-  plugins: [react(), eslint()],
-  server: {
-    proxy: {
-      "/api": {
-        target: process.env.VITE_SERVER_URL,
-        changeOrigin: true,
-        secure: false,
-      },
+    plugins: [react(), eslint()],
+    server: {
+        proxy: {
+            "/api": {
+                target: process.env.VITE_SERVER_URL,
+                changeOrigin: true,
+                secure: false,
+            },
+        },
+        allowedHosts: ["92b4-182-229-137-57.ngrok-free.app"],
     },
-    allowedHosts: ["592a-182-229-137-57.ngrok-free.app"],
-  },
-  appType: "spa",
+    appType: "spa",
 });

@@ -35,7 +35,7 @@ const port = 4000;
 const allowedOrigins = [
     "https://kauuru.vercel.app",
     "https://kauuru-d541p8qsq-yangjuns-projects-672649fb.vercel.app",
-    "https://0b79-182-229-137-57.ngrok-free.app",
+    "https://92b4-182-229-137-57.ngrok-free.app",
 ];
 
 // app.use(
