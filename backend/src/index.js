@@ -35,7 +35,7 @@ const port = 4000;
 const allowedOrigins = [
     "https://kauuru.vercel.app",
     "https://kauuru-d541p8qsq-yangjuns-projects-672649fb.vercel.app",
-    "https://92b4-182-229-137-57.ngrok-free.app",
+    "https://f2eb-182-229-137-57.ngrok-free.app",
 ];
 
 // app.use(
@@ -88,7 +88,7 @@ app.use(
 
             // 2) allowedOrigins 목록에 있으면 해당 Origin으로 허용
             if (allowedOrigins.includes(origin)) {
-                return callback(null, true);
+                return callback(null, origin);
             }
 
             // 3) 그 외의 Origin은 차단
