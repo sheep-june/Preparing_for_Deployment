@@ -186,7 +186,6 @@ export default function AdminAdImagePage() {
                         >
                             <div className="flex items-center gap-4">
                                 <img
-                                    // src={`http://localhost:4000/${ad.image}`}
                                     src={`${import.meta.env.VITE_SERVER_URL}/${
                                         ad.image
                                     }`}

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
-import axios from "../../../utils/axios"
+import axios from "../../../utils/axios";
 import CommentBox from "../../../components/Board/CommentBox";
 import { toast } from "react-toastify";
 
