@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
-import axios from "../../../utils/axios"
+import axios from "../../../utils/axios";
 
 const USERS_PER_PAGE = 10;
 
