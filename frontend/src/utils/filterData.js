@@ -54,6 +54,6 @@ const prices = [
         name: "50만원 이상",
         array: [500000, 90000000],
     },
-];
+]; 
 
 export { categories, prices };
