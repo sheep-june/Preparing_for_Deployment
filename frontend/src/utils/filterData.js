@@ -1,3 +1,4 @@
+//카테고리
 const categories = [
     { _id: 1, name: "패션의류/잡화" },
     { _id: 2, name: "뷰티" },
@@ -16,6 +17,7 @@ const categories = [
     { _id: 15, name: "헬스/건강식품" },
 ];
 
+//가격
 const prices = [
     {
         _id: 0,
