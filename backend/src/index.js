@@ -88,7 +88,7 @@ app.use(
 
             // 2) allowedOrigins 목록에 있으면 해당 Origin으로 허용
             if (allowedOrigins.includes(origin)) {
-                return callback(null, origin);
+                return callback(null, true);
             }
 
             // 3) 그 외의 Origin은 차단
